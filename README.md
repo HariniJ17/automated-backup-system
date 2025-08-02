@@ -1,22 +1,16 @@
-# Automated Backup System using Shell Script and Cron
+# Automated Backup System using Shell Script
 
-This project automates the process of backing up user-specified directories using a Bash script (`tar`) and schedules it with `cron`.
+This project is a simple Linux-based automation script that backs up user-specified directories into timestamped `.tar.gz` files. It uses a Bash script combined with `cron` to schedule backups (e.g., daily at 10:10 AM). The system includes optional log tracking and cleanup of old backups to manage storage efficiently.
 
-## 🔧 Features
-- Archives selected directories into timestamped `.tar.gz` files
-- Schedules daily backups via `cron` (e.g., 10:10 AM)
-- Optionally deletes backups older than 7 days
-- Logs backup results for monitoring
-
-## 💻 Technologies Used
-- Bash (Shell Scripting)
+## Technologies Used
+- Bash (Shell Script)
 - tar
-- cron
-- Linux
+- cron (Linux scheduler)
+- Linux OS
 
-## 📝 Setup
+## How It Works
+1. Archives selected folders using `tar`
+2. Appends a timestamp to the filename
+3. Stores it in a backup folder
+4. Runs automatically at a scheduled time using `cron`
 
-1. **Edit `backup.sh`** and update:
-   ```bash
-   SOURCE_DIRS="/home/yourusername/Documents /home/yourusername/Pictures"
-   DEST_DIR="/home/yourusername/backups"
